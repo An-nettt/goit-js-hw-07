@@ -21,6 +21,7 @@ function createGallery(galleryItems) {
     .join("");
   return imagesMarkUp;
 }
+
 let lightboxImage = 0;
 
 galerryImages.addEventListener("click", onImageClick);
@@ -32,9 +33,11 @@ function onImageClick(evt) {
   }
   galerryImages.addEventListener("keydown", onCloseImageKeyEsc);
 
-  lightboxImage = basicLightbox
-    .create(`<img src=${evt.target.dataset.source}>`)
-    .show();
+  lightboxImage = basicLightbox.create(
+    `<img src=${evt.target.dataset.source}>`
+  );
+
+  lightboxImage.show();
 }
 
 function onCloseImageKeyEsc(event) {
